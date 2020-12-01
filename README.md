@@ -5,6 +5,10 @@ A simple console to fork someone's all repositories routine.
 
 Happy Coding :)
 
+![alt SampleResult](https://github.com/donma/GithubForkTool/blob/master/dsnap_20201201141552.jpg?raw=true)
+
+
+
 Tutorial
 ----
 
@@ -25,6 +29,8 @@ Content:
 
 
 ```
+
+
 
 
 
