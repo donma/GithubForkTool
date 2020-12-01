@@ -12,6 +12,7 @@ namespace GitBackupTool
         static void Main(string[] args)
         {
 
+
             var mins = 60;
             if (File.Exists(AppDomain.CurrentDomain.BaseDirectory + "TIMERMINS.txt"))
             {
@@ -25,6 +26,11 @@ namespace GitBackupTool
             Console.WriteLine("Timer Start for " + mins + " Mins.");
 
             ReadAllDatasAndFork();
+
+            while (true)
+            {
+
+            }
         }
 
         private static void Tmr_Elapsed(object sender, ElapsedEventArgs e)
@@ -49,7 +55,7 @@ namespace GitBackupTool
 
                 foreach (var forkInfo in forkPool)
                 {
-                    StartFork(forkInfo.SelfToken, forkInfo.SelfUserName, forkInfo.TargetUserName);
+                    StartFork(forkInfo.SelfToken, forkInfo.SelfUserName, forkInfo.TargetUserName, forkInfo.Id);
                 }
 
 
@@ -58,7 +64,7 @@ namespace GitBackupTool
 
         }
 
-        private static void StartFork(string selfToken, string selfName, string targetName)
+        private static void StartFork(string selfToken, string selfName, string targetName, string id)
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("GitFork Tool.");
@@ -129,7 +135,7 @@ namespace GitBackupTool
             }
             Console.ForegroundColor = ConsoleColor.White;
 
-
+            Console.WriteLine(id + " Finish.....");
         }
     }
 
